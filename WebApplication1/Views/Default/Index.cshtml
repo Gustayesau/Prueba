@@ -1,0 +1,63 @@
+﻿
+@model  List<WebApplication1.Models.Estudiante>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="container">
+    <div class="row" >
+        <form action="Index" method="post">
+            <input type="radio" name="g" value="N">Nombre<br>
+            <input type="radio" name="g" value="M">Materia<br>
+            <input type="radio" name="g" value="P">Promedio<br>
+            <div class="col-lg-3">
+                <input type="text" name="nom" placeholder="Nombre de la materia" />
+                <input type="submit" value="Buscar" class="btn label-primary" />
+            </div>
+        </form>
+    <div class="col-lg-8 col-lg-4 jumbotron">
+        <p>Resultado</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Carnet
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Materia
+                    </th>
+                    <th>
+                        Promedio
+                    </th>
+                    <th>
+                        fecha
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Carnet</td>
+                        <td>
+                            @item.Nombre
+                        </td>
+                        <td>
+                            @item.Materia
+                        </td>
+                        <td>
+                            @item.Promedio
+                        </td>
+                        <td>@item.fecha</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
